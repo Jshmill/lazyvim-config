@@ -7,7 +7,7 @@ require("nvim-web-devicons").setup()
 require("plugins.transparent").setup() -- Example: set Material theme
 
 vim.g.material_style = "darker"
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme catppuccin-mocha")
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "markdown",
     callback = function()
