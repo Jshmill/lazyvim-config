@@ -2,7 +2,8 @@
 require("config.lazy")
 require("config.keymaps")
 require("config.options")
-require("nvim-web-devicons").setup()
+require("config.options")
+-- icons are handled via plugins/icons.lua now
 -- SETS A TRANSPARENT THEME
 require("plugins.transparent").setup() -- Example: set Material theme
 
