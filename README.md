@@ -9,5 +9,5 @@ Config forked off of for [LazyVim](https://github.com/LazyVim/LazyVim).
 3. Run `:Lazy sync` in Neovim to install plugins
 
 ```bash
-git Clone
+git clone
 ```

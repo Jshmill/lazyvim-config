@@ -7,8 +7,9 @@ require("config.options")
 -- SETS A TRANSPARENT THEME
 require("plugins.transparent").setup() -- Example: set Material theme
 
+vim.opt.termguicolors = true
 vim.g.material_style = "darker"
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme catppuccin-macchiato")
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "markdown",
     callback = function()
