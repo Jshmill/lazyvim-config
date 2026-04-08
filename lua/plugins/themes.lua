@@ -19,4 +19,25 @@ return {
 
     -- Material
     { "marko-cerovac/material.nvim" },
+
+    -- Dracula
+    { "dracula/vim", name = "dracula" },
+
+    -- Solarized
+    { "lifepillar/vim-solarized8" },
+
+    -- Monokai
+    { "crusoexia/vim-monokai" },
+
+    -- PaperColor
+    { "NLKNguyen/papercolor-theme" },
+
+    -- Ayu
+    { "Shatur/neovim-ayu" },
+
+    -- Synthwave '84
+    { "lourenci/github-colors" },
+
+    -- Rose Pine
+    { "rose-pine/neovim", name = "rose-pine" },
 }

@@ -13,7 +13,7 @@ return {
                 color_icons = true,
                 show_tab_indicators = false,
 
-                tab_size = 2,
+                tab_size = 0,
                 padding = 0,
 
                 indicator = {},
@@ -61,7 +61,7 @@ return {
                     bg = "none",
                 },
                 indicator_selected = {
-                    fg = "#ffffff",
+                    fg = "none",
                     bg = "none",
                 },
                 modified = {

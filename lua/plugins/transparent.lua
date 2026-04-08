@@ -19,32 +19,6 @@ function M.setup()
             "Pmenu",
             "PmenuSbar",
             "PmenuThumb",
-            "BufferLineFill",
-            "BufferLineBackground",
-            "BufferLineBackgroundSelected",
-            "BufferLineBackgroundVisible",
-            "BufferLineTab",
-            "BufferLineTabSelected",
-            "BufferLineTabVisible",
-            "BufferLineIndicator",
-            "BufferLineIndicatorSelected",
-            "BufferLineIndicatorVisible",
-            "BufferLineCloseButton",
-            "BufferLineCloseButtonSelected",
-            "BufferLineCloseButtonVisible",
-            "BufferLineDuplicate",
-            "BufferLineDuplicateSelected",
-            "BufferLineDuplicateVisible",
-            "BufferLineModified",
-            "BufferLineModifiedSelected",
-            "BufferLineModifiedVisible",
-            "BufferLineModifiedVisible",
-            "BufferLineModifiedSelected",
-            "BufferLineMiniIconsAzure",
-            "BufferLineMiniIconsAzureSelected",
-            "BufferLineMiniIconsAzureVisible",
-            "BufferLineBuffer",
-            "BufferLineBufferVisible",
         }
 
         for _, group in ipairs(groups) do
@@ -60,7 +34,7 @@ function M.setup()
         vim.api.nvim_set_hl(0, "LineNr", { fg = 0xd3d3d3, bg = "NONE" })
         vim.api.nvim_set_hl(0, "LineNrAbove", { fg = 0xd3d3d3 })
         vim.api.nvim_set_hl(0, "LineNrBelow", { fg = 0xd3d3d3, bg = "NONE" })
-        -- vim.api.nvim_set_hl(0, "VertSplit", { fg = "NONE", bg = "NONE" })
+        vim.api.nvim_set_hl(0, "LspInlayHint", { fg = 0x8E8BA7, bg = "NONE" })
     end
 
     -- Reapply transparency whenever a new colorscheme is set

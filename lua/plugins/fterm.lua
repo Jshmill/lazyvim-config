@@ -19,7 +19,7 @@ return {
         vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Terminal normal mode" })
 
         -- Toggle FTerm from terminal (insert) mode
-        vim.keymap.set("t", "<leader>t", function()
+        vim.keymap.set("n", "<leader>t", function()
             fterm.toggle()
         end, { desc = "Toggle FTerm" })
     end,
