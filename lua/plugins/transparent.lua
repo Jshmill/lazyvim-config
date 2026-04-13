@@ -29,7 +29,7 @@ function M.setup()
         end
 
         -- Optional: other highlights
-        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = 0x5feded, bg = "NONE", bold = true, italic = true })
+        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = 0xA3CFD8, bg = "NONE", bold = true, italic = true })
         vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
         vim.api.nvim_set_hl(0, "LineNr", { fg = 0xd3d3d3, bg = "NONE" })
         vim.api.nvim_set_hl(0, "LineNrAbove", { fg = 0xd3d3d3 })
