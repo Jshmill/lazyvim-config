@@ -19,13 +19,10 @@ return {
     },
     config = function(_, opts)
       local telescope = require("telescope")
-      telescope.setup(opts)
-      telescope.load_extension("projects")
-
       local actions = require("telescope.actions")
       local action_state = require("telescope.actions.state")
 
-      telescope.setup({
+      telescope.setup(vim.tbl_deep_extend("force", opts or {}, {
         extensions = {
           projects = {
             on_project_select = function(prompt_bufnr)
@@ -40,7 +37,8 @@ return {
             end,
           },
         },
-      })
+      }))
+      telescope.load_extension("projects")
     end,
   },
 }
