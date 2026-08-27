@@ -37,3 +37,5 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
         lint.try_lint()
     end,
 })
+
+vim.opt.fixeol = true
