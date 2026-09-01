@@ -8,4 +8,6 @@ return {
 
     -- Install everforest theme
     { "sainnhe/everforest", name = "everforest" },
+
+    { 'https://github.com/vague-theme/vague.nvim', name = "vague" },
 }
