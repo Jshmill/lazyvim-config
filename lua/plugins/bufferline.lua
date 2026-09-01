@@ -47,7 +47,7 @@ return {
                     bg = "NONE",
                 },
                 background = {
-                    fg = "#6c7086",
+                    fg = "NONE",
                     bg = "NONE",
                 },
                 buffer_selected = {

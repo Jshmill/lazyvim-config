@@ -24,7 +24,15 @@ return {
                 header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-        { action = 'lua LazyVim.pick("projects")()',  desc = " Workspace",        icon = "󱂬 ", key = "p" },
+        {
+        action = function()
+            vim.cmd("cd ~/Applications/")
+            LazyVim.pick("projects")()
+        end,
+        desc = "Workspace",
+        icon = "󱂬 ",
+        key = "p",
+        },
         { action = 'lua LazyVim.pick()()',            desc = " Find File",        icon = "󰈞 ", key = "f" },
         { action = "ene | startinsert",               desc = " New Buffer",       icon = "󰝒 ", key = "n" },
         { action = 'lua LazyVim.pick("oldfiles")()',  desc = " Recent Files",     icon = "󰋚 ", key = "r" },

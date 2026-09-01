@@ -5,4 +5,7 @@ return {
 
     -- Install nord theme
     { "shaunsingh/nord.nvim", name = "nord" },
+
+    -- Install everforest theme
+    { "sainnhe/everforest", name = "everforest" },
 }
