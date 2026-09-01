@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- NOTE: COLORSCHEME CONTROLLED HERE
-vim.cmd("colorscheme rose-pine-moon")
+vim.cmd("colorscheme nord")
 vim.opt.foldmethod = "indent"
 
 local lint = require("lint")

@@ -5,18 +5,17 @@ return {
         opts = {
             options = {
                 mode = "buffers",
-                separator_style = "none",
+                separator_style = { "", "" },
                 always_show_bufferline = true,
                 show_buffer_icons = true,
-                show_buffer_close_icons = true,
-                show_close_icon = true,
+                show_buffer_close_icons = false,
+                show_close_icon = false,
                 color_icons = true,
                 show_tab_indicators = false,
 
-                tab_size = 0,
-                padding = 0,
+                tab_size = 16,
+                padding = 1,
 
-                indicator = {},
                 modified_icon = "●",
                 -- Shows the directory context if the filename is init.lua or duplicated
                 name_formatter = function(buf)
@@ -45,7 +44,7 @@ return {
             },
             highlights = {
                 fill = {
-                    bg = "none",
+                    bg = "NONE",
                 },
                 background = {
                     fg = "#6c7086",
@@ -53,37 +52,37 @@ return {
                 },
                 buffer_selected = {
                     fg = "#ffffff",
-                    bg = "none",
+                    bg = "NONE",
                     bold = true,
                 },
                 buffer_visible = {
                     fg = "#6c7086",
-                    bg = "none",
+                    bg = "NONE",
                 },
                 indicator_selected = {
-                    fg = "none",
-                    bg = "none",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
                 modified = {
-                    bg = "none",
+                    bg = "NONE",
                 },
                 modified_visible = {
-                    bg = "none",
+                    bg = "NONE",
                 },
                 modified_selected = {
-                    bg = "none",
+                    bg = "NONE",
                 },
                 separator = {
-                    fg = "none",
-                    bg = "none",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
                 separator_selected = {
-                    fg = "none",
-                    bg = "none",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
                 separator_visible = {
-                    fg = "none",
-                    bg = "none",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
             },
         },
