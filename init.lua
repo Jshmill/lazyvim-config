@@ -8,6 +8,10 @@ require("config.options")
 -- SETS A TRANSPARENT THEME
 require("config.transparent").setup() -- Example: set Material theme
 
+vim.api.nvim_create_user_command("TransparentRefresh", function()
+    require("config.transparent").refresh()
+end, {})
+
 vim.opt.termguicolors = true
 vim.opt.relativenumber = false
 vim.g.material_style = "darker"
