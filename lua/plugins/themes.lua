@@ -10,4 +10,10 @@ return {
     { "sainnhe/everforest", name = "everforest" },
 
     { 'https://github.com/vague-theme/vague.nvim', name = "vague" },
+
+-- Install gruvbox theme
+    { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
+
+    -- Install tokyonight theme
+    { "folke/tokyonight.nvim", name = "tokyonight" },
 }

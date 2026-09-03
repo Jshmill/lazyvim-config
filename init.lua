@@ -23,7 +23,25 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- NOTE: COLORSCHEME CONTROLLED HERE
-vim.cmd("colorscheme nord")
+-- Pick up whatever theme wezterm last set, fall back to nord
+local function load_synced_colorscheme()
+	local state_file = os.getenv("HOME") .. "/.cache/wezterm-nvim-theme"
+	local f = io.open(state_file, "r")
+	if f then
+		local theme = f:read("*l")
+		f:close()
+		if theme and theme ~= "" then
+			local ok = pcall(vim.cmd.colorscheme, theme)
+			if ok then
+				return
+			end
+		end
+	end
+	vim.cmd("colorscheme nord")
+end
+
+load_synced_colorscheme()
+
 vim.opt.foldmethod = "indent"
 
 local lint = require("lint")
