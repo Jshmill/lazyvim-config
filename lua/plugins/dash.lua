@@ -29,7 +29,7 @@ local logo = [[
 
 ]]
 
-        logo = string.rep("\n", 1) .. logo .. "\n\n"
+        logo = string.rep("\n", 3) .. logo .. "\n\n"
 
         local opts = {
             theme = "doom",
@@ -47,7 +47,7 @@ local logo = [[
             vim.cmd("cd ~/Applications/")
             LazyVim.pick("projects")()
         end,
-        desc = "Workspace",
+        desc = " Workspace",
         icon = "󱂬 ",
         key = "p",
         },
