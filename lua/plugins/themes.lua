@@ -16,4 +16,7 @@ return {
 
     -- Install tokyonight theme
     { "folke/tokyonight.nvim", name = "tokyonight" },
+
+    -- Install Github light theme
+    { "projekt0n/github-nvim-theme", name = "github" },
 }
