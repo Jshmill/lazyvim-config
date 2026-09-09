@@ -6,9 +6,21 @@ return {
             local icons = require("lazyvim.config").icons
             local util = require("lazyvim.util")
 
+            local theme = require("lualine.themes.auto")
+
+            for _, mode in pairs(theme) do
+                for section_name, section in pairs(mode) do
+                    if section_name == "c" then
+                        if type(section) == "table" then
+                            section.bg = "NONE"
+                        end
+                    end
+                end
+            end
+
             return {
                 options = {
-                    theme = "auto",
+                    theme = theme,
                     globalstatus = true,
                     disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
                     component_separators = "|",
