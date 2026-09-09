@@ -2,7 +2,27 @@ return {
     {
         "akinsho/bufferline.nvim",
         event = "VeryLazy",
-        opts = {
+        opts = function()
+            local keyword = vim.api.nvim_get_hl(0, {
+                name = "Keyword",
+            })
+
+            local white = vim.api.nvim_get_hl(0, {
+                name = "LineNr",
+            })
+
+            local func = vim.api.nvim_get_hl(0, {
+                name = "Function",
+            })
+
+            local warn = vim.api.nvim_get_hl(0, {
+                name = "Warnings",
+            })
+
+            local err = vim.api.nvim_get_hl(0, {
+                name = "Error",
+            })
+        return {
             options = {
                 mode = "buffers",
                 separator_style = { "", "" },
@@ -13,6 +33,7 @@ return {
                 color_icons = true,
                 show_tab_indicators = false,
 
+                max_name_length = 999,
                 tab_size = 16,
                 padding = 1,
 
@@ -26,6 +47,7 @@ return {
                 end,
                 diagnostics = "nvim_lsp",
                 diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                -- diagnostics_indicator = function(diagnostics_dict)
                     local s = " "
                     for e, n in pairs(diagnostics_dict) do
                         local sym = e == "error" and " " or (e == "warning" and " " or "")
@@ -51,14 +73,16 @@ return {
                     bg = "NONE",
                 },
                 buffer_selected = {
-                    fg = "#ffffff",
+                    fg = func.fg,
                     bg = "NONE",
                     bold = true,
                 },
+
                 buffer_visible = {
-                    fg = "#6c7086",
+                    fg = white.fg,
                     bg = "NONE",
                 },
+
                 indicator_selected = {
                     fg = "NONE",
                     bg = "NONE",
@@ -84,7 +108,63 @@ return {
                     fg = "NONE",
                     bg = "NONE",
                 },
+
+                warning_diagnostic = {
+                    fg = warn.fg,
+                    bg = "NONE",
+                },
+
+                warning = {
+                    fg = white.fg,
+                    bg = "NONE",
+                },
+
+                error_diagnostic = {
+                    fg = err.fg,
+                    bg = "NONE",
+                },
+
+                error = {
+                    fg = white.fg,
+                    bg = "NONE",
+                },
+
+                -- diagnostic = {
+                --     fg = white.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- info_diagnostic_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- hint_diagnostic_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- error_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- warning_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- info_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
+                --
+                -- hint_visible = {
+                --     fg = keyword.fg,
+                --     bg = "NONE",
+                -- },
             },
-        },
+        }
+        end,
     },
 }
