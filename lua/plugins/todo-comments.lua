@@ -5,7 +5,7 @@ return {
     opts = {
         keywords = {
             TODO = { icon = "󱈸", color = "warning" },
-            DONE = { icon = " ", color = "info", alt = { "OK", "DONE" } },
+            DONE = { icon = " ", color = "success", alt = { "OK", "DONE" } },
             -- sign is an optional, any boolean/string can be used (e.g. a text or an icon)
             -- if not provided, will use the default (exclamation icon)
             FIX = { icon = " ", color = "error" },
