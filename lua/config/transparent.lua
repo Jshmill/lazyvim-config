@@ -28,13 +28,13 @@ local function make_transparent()
         })
     end
 
-    local moremsg = vim.api.nvim_get_hl(0, { name = "MoreMsg" })
+    local Directory = vim.api.nvim_get_hl(0, { name = "Directory" })
 
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatTitle", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatFooter", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = moremsg.fg, bg = "NONE", bold = true, italic = true })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = Directory.fg, bg = "NONE", bold = true, italic = true })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "LineNr", { fg = 0xd3d3d3, bg = "NONE" })
     vim.api.nvim_set_hl(0, "LineNrAbove", { fg = 0xd3d3d3 })

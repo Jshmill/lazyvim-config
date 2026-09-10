@@ -12,11 +12,14 @@ return {
     { 'https://github.com/vague-theme/vague.nvim', name = "vague" },
 
 -- Install gruvbox theme
-    { "ellisonleao/gruvbox.nvim", name = "gruvbox" },
+    { "sainnhe/gruvbox-material", name = "gruvbox-material" },
 
     -- Install tokyonight theme
     { "folke/tokyonight.nvim", name = "tokyonight" },
 
     -- Install Github light theme
     { "projekt0n/github-nvim-theme", name = "github" },
+
+    -- Install Night Owl theme
+    { "oxfist/night-owl.nvim", name = "night-owl"}
 }

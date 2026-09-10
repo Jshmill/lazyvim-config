@@ -63,4 +63,7 @@ return {
             return opts
         end,
     },
+    vim.api.nvim_set_hl(0, "@keyword.tsql", {
+        link = "Keyword",
+    })
 }

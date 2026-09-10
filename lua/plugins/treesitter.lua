@@ -3,7 +3,6 @@ return {
     opts = {
         highlight = {
             enable = true,
-            disable = { "sql" },
         },
     },
 }
