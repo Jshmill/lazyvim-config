@@ -8,7 +8,8 @@ require("catppuccin").setup({
             MatchParen = { bg = colors.none, fg = colors.red },
             Operator = { bg = colors.none, fg = colors.peach },
             Number = {fg = colors.red},
-            -- Keyword = { fg = colors.pink}
+            Conditional = {fg = colors.pink},
+            PreProc = {fg = colors.flamingo}
         }
     end,
 })

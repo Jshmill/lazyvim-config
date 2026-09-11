@@ -21,10 +21,11 @@ vim.api.nvim_create_autocmd("Syntax", {
   pattern = "sql",
   callback = function()
     vim.cmd([[
-      syntax keyword SpecialComment BEGIN containedin=ALL
-      syntax keyword SpecialComment END containedin=ALL
-      syntax keyword SqlGo GO containedin=ALL
-      syntax keyword SqlReturn 
+      syntax match Comment "--.*$"
+      syntax keyword @keyword.directive GO BEGIN END containedin=ALLBUT,Comment
+      syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment
+      syntax keyword @error RAISERROR containedin=ALLBUT,Comment
+      syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment
 
       " highlight SqlBlock guifg=#89b4fa gui=bold
     ]])
