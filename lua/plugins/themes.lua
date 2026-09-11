@@ -1,5 +1,9 @@
 return {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000,
+        config = function()
+            require("config.catppuccin")
+        end,
+    },
 
     { "rose-pine/neovim", name = "rose-pine" },
 
@@ -11,7 +15,7 @@ return {
 
     { 'https://github.com/vague-theme/vague.nvim', name = "vague" },
 
--- Install gruvbox theme
+    -- Install gruvbox theme
     { "sainnhe/gruvbox-material", name = "gruvbox-material" },
 
     -- Install tokyonight theme

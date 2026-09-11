@@ -15,3 +15,19 @@ vim.api.nvim_create_autocmd("FileType", {
         end)
     end,
 })
+
+
+vim.api.nvim_create_autocmd("Syntax", {
+  pattern = "sql",
+  callback = function()
+    vim.cmd([[
+      syntax keyword SpecialComment BEGIN containedin=ALL
+      syntax keyword SpecialComment END containedin=ALL
+      syntax keyword SqlGo GO containedin=ALL
+      syntax keyword SqlReturn 
+
+      " highlight SqlBlock guifg=#89b4fa gui=bold
+    ]])
+  end,
+})
+
