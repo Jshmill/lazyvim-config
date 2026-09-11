@@ -32,3 +32,96 @@ vim.api.nvim_create_autocmd("Syntax", {
   end,
 })
 
+
+-- vim.api.nvim_create_autocmd("Syntax", {
+--   pattern = "sql",
+--   callback = function()
+--     vim.cmd([[
+--       " Comments
+--       syntax match SqlComment "--.*$"
+--
+--       " Structure / control flow
+--       syntax keyword SqlControl
+--             \ BEGIN END
+--             \ IF ELSE
+--             \ EXISTS RETURN
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " DML
+--       syntax keyword SqlDml
+--             \ SELECT INSERT UPDATE DELETE
+--             \ MERGE
+--             \ FROM WHERE INTO
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " Transaction handling
+--       syntax keyword SqlTransaction
+--             \ TRANSACTION COMMIT ROLLBACK
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " Trigger-specific
+--       syntax keyword SqlTrigger
+--             \ TRIGGER GO
+--             \ DELETED INSERTED
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " Functions
+--       syntax keyword SqlFunction
+--             \ GETDATE USER_NAME HOST_NAME
+--             \ CONVERT
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " Error handling
+--       syntax keyword SqlError
+--             \ RAISERROR
+--             \ containedin=ALLBUT,SqlComment
+--
+--       " Types
+--       syntax keyword SqlType
+--             \ VARCHAR NVARCHAR CHAR NCHAR
+--             \ INT BIGINT SMALLINT TINYINT
+--             \ BIT DATETIME DATE DECIMAL
+--             \ containedin=ALLBUT,SqlComment
+--     ]])
+--
+--     local cp = require("catppuccin.palettes").get_palette()
+--
+--     vim.api.nvim_set_hl(0, "SqlControl", {
+--       fg = cp.lavender,
+--       bold = true,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlDml", {
+--       fg = cp.blue,
+--       bold = true,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlTransaction", {
+--       fg = cp.flamingo,
+--       bold = true,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlTrigger", {
+--       fg = cp.mauve,
+--       bold = true,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlFunction", {
+--       fg = cp.peach,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlError", {
+--       fg = cp.red,
+--       bold = true,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlType", {
+--       fg = cp.yellow,
+--     })
+--
+--     vim.api.nvim_set_hl(0, "SqlComment", {
+--       fg = cp.overlay1,
+--       italic = true,
+--     })
+--   end,
+-- })

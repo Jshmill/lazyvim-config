@@ -19,6 +19,8 @@ local function make_transparent()
         "Pmenu",
         "PmenuSbar",
         "PmenuThumb",
+        "TroubleCount",
+        "TroubleNormal",
     }
 
     for _, group in ipairs(groups) do
