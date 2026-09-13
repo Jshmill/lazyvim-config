@@ -21,11 +21,16 @@ vim.api.nvim_create_autocmd("Syntax", {
   pattern = "sql",
   callback = function()
     vim.cmd([[
+      "Avoid coloring within Comments and Strings"
       syntax match Comment "--.*$"
-      syntax keyword @keyword.directive GO BEGIN END containedin=ALLBUT,Comment
-      syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment
-      syntax keyword @error RAISERROR containedin=ALLBUT,Comment
-      syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment
+      syntax match String /"\_.\{-}"\|'\_.\{-}'/
+
+      "Coloring"
+      syntax keyword @keyword.directive GO BEGIN END containedin=ALLBUT,Comment,String
+      syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment,String
+      syntax keyword @error RAISERROR containedin=ALLBUT,Comment,String
+      syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment,String
+      syntax match @constructor "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 
       " highlight SqlBlock guifg=#89b4fa gui=bold
     ]])

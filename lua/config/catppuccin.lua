@@ -9,7 +9,7 @@ require("catppuccin").setup({
             Operator = { bg = colors.none, fg = colors.peach },
             Number = {fg = colors.red},
             Conditional = {fg = colors.pink},
-            PreProc = {fg = colors.flamingo}
+            PreProc = {fg = colors.flamingo},
         }
     end,
 })
