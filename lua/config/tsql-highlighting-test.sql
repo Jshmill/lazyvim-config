@@ -67,9 +67,9 @@ offset 0 rows fetch next 10 rows only;
 
 -- cte and recursive cte
 with activeusers as (
-    select userid, username
-    from #users
-    where isactive = 1
+    select  userid, username
+    from    #users
+    where   isactive = 1
 ),
 
 numberseries (
