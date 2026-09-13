@@ -13,7 +13,7 @@ vim.api.nvim_create_user_command("TransparentRefresh", function()
 end, {})
 
 vim.opt.termguicolors = true
-vim.opt.relativenumber = false
+-- vim.opt.relativenumber = false
 vim.g.material_style = "darker"
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "markdown",
