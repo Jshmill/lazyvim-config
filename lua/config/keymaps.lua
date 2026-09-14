@@ -18,4 +18,12 @@ vim.keymap.set("n", "<leader>bL", "<Cmd>BufferLineMoveNext<CR>")
 vim.keymap.set("n", "<Enter>", "o<Esc>", { desc = "New Line"})
 vim.keymap.set("n", "<S-Enter>", "O<Esc>", { desc = "New Line Above"})
 
-vim.keymap.set("n", "<leader>P", "<Cmd>!sqlfluff fix %<CR>", {desc = "Format TSQL using sqlfluff"})
+-- vim.keymap.set("n", "<leader>P", "<Cmd>!sqlfluff fix %<CR><Cmd>retab<CR>", {desc = "Format TSQL using sqlfluff"})
+vim.keymap.set("n", "<leader>P", function()
+  vim.cmd("write")
+  vim.cmd("!sqlfluff fix %")
+  vim.cmd("edit!")
+  vim.cmd("retab")
+end, {
+  desc = "Format TSQL using sqlfluff",
+})

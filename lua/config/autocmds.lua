@@ -26,7 +26,10 @@ vim.api.nvim_create_autocmd("Syntax", {
       syntax match String /"\_.\{-}"\|'\_.\{-}'/
 
       "Coloring"
+      syntax match @variable "@[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+      syntax keyword @tag DBO containedin=ALLBUT,Comment,String
       syntax keyword @keyword.directive GO BEGIN END containedin=ALLBUT,Comment,String
+      syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment,String
       syntax keyword @error RAISERROR containedin=ALLBUT,Comment,String
       syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment,String
