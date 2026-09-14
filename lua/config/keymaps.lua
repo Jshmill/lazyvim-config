@@ -17,3 +17,5 @@ vim.keymap.set("n", "<leader>bL", "<Cmd>BufferLineMoveNext<CR>")
 -- Insert new lines
 vim.keymap.set("n", "<Enter>", "o<Esc>", { desc = "New Line"})
 vim.keymap.set("n", "<S-Enter>", "O<Esc>", { desc = "New Line Above"})
+
+vim.keymap.set("n", "<leader>P", "<Cmd>!sqlfluff fix %<CR>", {desc = "Format TSQL using sqlfluff"})
