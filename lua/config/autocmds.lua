@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("Syntax", {
 
       "Coloring"
       syntax match @variable "@[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
-      syntax keyword @tag DBO containedin=ALLBUT,Comment,String
+      syntax keyword @tag SYS DBO TOP containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional GO BEGIN END containedin=ALLBUT,Comment,String
       syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment,String
@@ -35,7 +35,6 @@ vim.api.nvim_create_autocmd("Syntax", {
       syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment,String
       syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 
-      " highlight SqlBlock guifg=#89b4fa gui=bold
     ]])
   end,
 })

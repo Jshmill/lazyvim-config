@@ -7,7 +7,7 @@ require("catppuccin").setup({
             Pmenu = { bg = colors.none },
             MatchParen = { bg = colors.none, fg = colors.red },
             Operator = { bg = colors.none, fg = colors.peach, italic = true },
-            Number = {fg = colors.red},
+            Number = {fg = colors.flamingo},
             Conditional = {fg = colors.pink},
             PreProc = {fg = colors.flamingo},
             ["@variable"] = {italic = true}

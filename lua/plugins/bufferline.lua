@@ -128,41 +128,6 @@ return {
                     fg = white.fg,
                     bg = "NONE",
                 },
-
-                -- diagnostic = {
-                --     fg = white.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- info_diagnostic_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- hint_diagnostic_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- error_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- warning_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- info_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
-                --
-                -- hint_visible = {
-                --     fg = keyword.fg,
-                --     bg = "NONE",
-                -- },
             },
         }
         end,
