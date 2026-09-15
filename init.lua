@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- NOTE: COLORSCHEME CONTROLLED HERE
--- Pick up whatever theme wezterm last set, fall back to nord
+-- Pick up whatever theme wezterm last set, fall back to catppuccin
 local function load_synced_colorscheme()
 	local state_file = os.getenv("HOME") .. "/.cache/wezterm-nvim-theme"
 	local f = io.open(state_file, "r")
@@ -37,7 +37,7 @@ local function load_synced_colorscheme()
 			end
 		end
 	end
-	vim.cmd("colorscheme nord")
+	vim.cmd("colorscheme catppuccin-mocha")
 end
 
 load_synced_colorscheme()
