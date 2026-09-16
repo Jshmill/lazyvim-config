@@ -27,13 +27,22 @@ vim.api.nvim_create_autocmd("Syntax", {
 
       "Coloring"
       syntax match @variable "@[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
-      syntax keyword @tag SYS DBO TOP containedin=ALLBUT,Comment,String
+      syntax keyword @tag TOP DEFAULT PRIMARY KEY containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional GO BEGIN END containedin=ALLBUT,Comment,String
       syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment,String
       syntax keyword @error RAISERROR containedin=ALLBUT,Comment,String
       syntax keyword @function TRANSACTION INTO containedin=ALLBUT,Comment,String
+      syntax keyword @number NULL containedin=ALLBUT,Comment,String
       syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+
+      " Schema-qualified object
+      syntax match @tag "\<\(dbo\|sys\)\ze\." containedin=ALLBUT,Comment,String
+      syntax match @property "\%(\<dbo\>\|\<sys\>\)\.\zs[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+
+      " Table.column
+      syntax match @property "\<[A-Za-z_][A-Za-z0-9_]*\ze\.[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+      syntax match @variable "\.\zs[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 
     ]])
   end,
