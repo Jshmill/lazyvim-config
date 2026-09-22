@@ -18,6 +18,13 @@ return {
     -- Install gruvbox theme
     { "sainnhe/gruvbox-material", name = "gruvbox-material" },
 
+    -- Install gruvbox light
+    { "morhetz/gruvbox", name = "gruvbox",
+        config = function()
+            vim.cmd("set background=light")
+        end,
+    },
+
     -- Install tokyonight theme
     { "folke/tokyonight.nvim", name = "tokyonight" },
 
