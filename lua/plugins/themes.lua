@@ -19,11 +19,7 @@ return {
     { "sainnhe/gruvbox-material", name = "gruvbox-material" },
 
     -- Install gruvbox light
-    { "morhetz/gruvbox", name = "gruvbox",
-        config = function()
-            vim.cmd("set background=light")
-        end,
-    },
+    { "morhetz/gruvbox", name = "gruvbox" },
 
     -- Install tokyonight theme
     { "folke/tokyonight.nvim", name = "tokyonight" },

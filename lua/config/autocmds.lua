@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd("Syntax", {
       syntax keyword @tag TOP DEFAULT PRIMARY KEY containedin=ALLBUT,Comment,String
       syntax keyword @keyword.conditional GO BEGIN END ON OFF containedin=ALLBUT,Comment,String
       syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
-      syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN containedin=ALLBUT,Comment,String
+      syntax keyword @keyword.conditional IF ELSE THEN EXISTS RETURN CASE WHEN containedin=ALLBUT,Comment,String
       syntax keyword @error RAISERROR containedin=ALLBUT,Comment,String
       syntax keyword @function TRANSACTION INTO IDENTITY_INSERT containedin=ALLBUT,Comment,String
       syntax keyword @number NULL containedin=ALLBUT,Comment,String
