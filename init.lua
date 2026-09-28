@@ -8,6 +8,8 @@ require("config.options")
 -- SETS A TRANSPARENT THEME
 require("config.transparent").setup() -- Example: set Material theme
 
+vim.opt.scrolloff = 10
+
 vim.api.nvim_create_user_command("TransparentRefresh", function()
     require("config.transparent").refresh()
 end, {})

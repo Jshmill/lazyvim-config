@@ -27,7 +27,22 @@ return {
                     section_separators = { left = "", right = "" },
                 },
                 sections = {
-                    lualine_a = { { "mode", separator = { left = "" }, right_padding = 2, icon = "" } },
+                lualine_a = {
+                    {
+                        "mode",
+                        fmt = function(mode)
+                            local names = {
+                                COMMAND = "PROMPT",
+                                REPLACE = "CHANGE",
+                            }
+
+                            return names[mode] or mode
+                        end,
+                        separator = { left = "" },
+                        right_padding = 2,
+                        icon = "  ",
+                    },
+                },
                     lualine_b = { "branch" },
 
                     lualine_c = {
