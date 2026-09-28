@@ -40,7 +40,7 @@ return {
                         end,
                         separator = { left = "" },
                         right_padding = 2,
-                        icon = "  ",
+                        icon = "",
                     },
                 },
                     lualine_b = { "branch" },
