@@ -29,7 +29,17 @@ return {
     },
 
     -- Install everforest theme
-    { "sainnhe/everforest", name = "everforest" },
+    {
+      'sainnhe/everforest',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.g.everforest_background = "soft"
+        vim.g.everforest_enable_italic = true
+        vim.cmd.colorscheme('everforest')
+      end
+    },
+
 
     { 'https://github.com/vague-theme/vague.nvim', name = "vague" },
 
