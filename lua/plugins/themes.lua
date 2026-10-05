@@ -7,9 +7,6 @@ return {
 
     { "rose-pine/neovim", name = "rose-pine" },
 
-    -- Install nord theme
-    -- { "shaunsingh/nord.nvim", name = "nord" },
-
     { "shaunsingh/nord.nvim", name = "nord",
         config = function()
             require("config.nord")
