@@ -32,10 +32,21 @@ local function load_synced_colorscheme()
 		local theme = f:read("*l")
 		f:close()
 		if theme and theme ~= "" then
-			local ok = pcall(vim.cmd.colorscheme, theme)
-			if ok then
-				return
-			end
+            print("APPLYING THEME:", theme)
+            local ok = pcall(vim.cmd.colorscheme, theme)
+            if ok then
+                vim.schedule(function()
+                    pcall(function()
+                        require("lualine").refresh()
+                    end)
+
+                    pcall(function()
+                        vim.cmd("BufferLineRefresh")
+                    end)
+                end)
+
+                return
+            end
 		end
 	end
 	vim.cmd("colorscheme catppuccin-mocha")
