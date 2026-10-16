@@ -37,13 +37,13 @@ vim.api.nvim_create_autocmd("Syntax", {
       syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String
       syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 
-      " Schema-qualified object
-      syntax match @tag "\<\(dbo\|sys\)\ze\." containedin=ALLBUT,Comment,String
-      syntax match @property "\%(\<dbo\>\|\<sys\>\)\.\zs[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
-
       " Table.column
-      syntax match @property "\<[A-Za-z_][A-Za-z0-9_]*\ze\.[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
-      syntax match @variable "\.\zs[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+      syntax match @property "\<\%(\%(dbo\|sys\)\>\)\@![A-Za-z_][A-Za-z0-9_]*\ze\.[A-Za-z_][A-Za-z0-9_]*"
+      syntax match @variable "\.\@<=[A-Za-z_][A-Za-z0-9_]*"
+
+      " Schema rules take priority; lookbehind lets object matches start after the schema dot.
+      syntax match @tag "\<\%(dbo\|sys\)\."
+      syntax match @property "\%(\<\%(dbo\|sys\)\.\)\@<=[A-Za-z_][A-Za-z0-9_]*"
 
     ]])
   end,

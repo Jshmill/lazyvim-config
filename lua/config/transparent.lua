@@ -21,6 +21,9 @@ local function make_transparent()
         "PmenuThumb",
         "TroubleCount",
         "TroubleNormal",
+        "SnacksTerminalBorder",
+        "SnacksTerminalNormal",
+        "MiniPickNormal"
     }
 
     for _, group in ipairs(groups) do
