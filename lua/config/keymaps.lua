@@ -27,3 +27,11 @@ vim.keymap.set("n", "<leader>P", function()
 end, {
   desc = "Format TSQL using sqlfluff",
 })
+
+-- For normal mode search
+vim.keymap.set('n', '/', '/\\v', { silent = false })
+vim.keymap.set('n', '?', '?\\v', { silent = false })
+
+-- For command-line substitution
+vim.keymap.set('c', '%s/', '%s/\\v', { silent = false })
+vim.keymap.set('c', "'<,'>s/", "'<,'>s/\\v", { silent = false })
