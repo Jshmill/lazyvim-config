@@ -6,9 +6,34 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<Leader>j", "i<CR><Esc>k$", { desc = "Split line at cursor" })
 
 vim.keymap.set("n", "<leader>yp", function()
-    vim.fn.setreg("+", vim.fn.expand("%:."))
-    print("Copied relative path: " .. vim.fn.expand("%"))
+    local path = vim.fn.expand("%:.")
+
+    vim.fn.setreg("+", path)
+
+    Snacks.notify(
+        "󰆏 " .. path,
+        {
+            title = "Copied"
+        }
+    )
 end, { desc = "Copy relative file path" })
+
+vim.keymap.set("n", "<leader>yl", function()
+    local result = string.format(
+        "%s:%d",
+        vim.fn.expand("%:."),
+        vim.fn.line(".")
+    )
+
+    vim.fn.setreg("+", result)
+
+    Snacks.notify(
+        "󰆏 " .. result,
+        {
+            title = "Copied"
+        }
+    )
+end, { desc = "Copy file path and line number" })
 
 -- Move Buffers Left or Right
 vim.keymap.set("n", "<leader>bH", "<Cmd>BufferLineMovePrev<CR>")
