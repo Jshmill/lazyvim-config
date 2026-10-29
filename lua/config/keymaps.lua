@@ -60,3 +60,13 @@ vim.keymap.set('n', '?', '?\\v', { silent = false })
 -- For command-line substitution
 vim.keymap.set('c', '%s/', '%s/\\v', { silent = false })
 vim.keymap.set('c', "'<,'>s/", "'<,'>s/\\v", { silent = false })
+
+
+-- Add keymaps to increase or decrease the size of the current window
+vim.keymap.set("n", "<leader>wl", "<cmd>vertical resize +10<CR>", {
+  desc = "Increase window width",
+})
+
+vim.keymap.set("n", "<leader>wh", "<cmd>vertical resize -10<CR>", {
+  desc = "Increase window width",
+})
