@@ -18,34 +18,34 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 vim.api.nvim_create_autocmd("Syntax", {
-  pattern = "sql",
-  callback = function()
+    pattern = "sql",
+    callback = function()
     vim.cmd([[
-      "Avoid coloring within Comments and Strings"
-      syntax match Comment "--.*$"
-      syntax match String /"\_.\{-}"\|'\_.\{-}'/
+        "Avoid coloring within Comments and Strings"
+        syntax match Comment "--.*$"
+        syntax match String /"\_.\{-}"\|'\_.\{-}'/
 
-      "Coloring"
-      syntax match @variable "@[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
-      syntax keyword @tag TOP DEFAULT PRIMARY KEY containedin=ALLBUT,Comment,String
-      syntax keyword @keyword.conditional GO BEGIN END ON OFF containedin=ALLBUT,Comment,String
-      syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
-      syntax keyword @keyword.conditional IF IIF ELSE THEN EXISTS RETURN CASE WHEN containedin=ALLBUT,Comment,String
-      syntax keyword @variable.parameter RAISERROR EXEC EXECUTE TRIGGER PROCEDURE TABLE VIEW FUNCTION containedin=ALLBUT,Comment,String
-      syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT containedin=ALLBUT,Comment,String
-      syntax keyword @number NULL containedin=ALLBUT,Comment,String
-      syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String
-      syntax match @variable.builtin "[()\[\]{}]" containedin=ALLBUT,Comment,String
-      syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+        "Coloring"
+        syntax match @variable "@[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
+        syntax keyword @tag TOP DEFAULT PRIMARY KEY containedin=ALLBUT,Comment,String
+        syntax keyword @keyword.conditional GO BEGIN END ON OFF containedin=ALLBUT,Comment,String
+        syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
+        syntax keyword @keyword.conditional IF IIF ELSE THEN EXISTS RETURN CASE WHEN containedin=ALLBUT,Comment,String
+        syntax keyword @variable.parameter RAISERROR EXEC EXECUTE TRIGGER PROCEDURE TABLE VIEW FUNCTION containedin=ALLBUT,Comment,String
+        syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT containedin=ALLBUT,Comment,String
+        syntax keyword @number NULL containedin=ALLBUT,Comment,String
+        syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String
+        syntax match @variable.builtin "[()\[\]{}]" containedin=ALLBUT,Comment,String
+        syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 
-      " Table.column
-      syntax match @property "\<\%(\%(dbo\|sys\)\>\)\@![A-Za-z_][A-Za-z0-9_]*\ze\.[A-Za-z_][A-Za-z0-9_]*"
-      syntax match @variable "\.\@<=[A-Za-z_][A-Za-z0-9_]*"
+        " Table.column
+        syntax match @property "\<\%(\%(dbo\|sys\)\>\)\@![A-Za-z_][A-Za-z0-9_]*\ze\.[A-Za-z_][A-Za-z0-9_]*"
+        syntax match @variable "\.\@<=[A-Za-z_][A-Za-z0-9_]*"
 
-      " Schema rules take priority; lookbehind lets object matches start after the schema dot.
-      syntax match @tag "\<\%(dbo\|sys\)\."
-      syntax match @property "\%(\<\%(dbo\|sys\)\.\)\@<=[A-Za-z_][A-Za-z0-9_]*"
+        " Schema rules take priority; lookbehind lets object matches start after the schema dot.
+        syntax match @tag "\<\%(dbo\|sys\)\."
+        syntax match @property "\%(\<\%(dbo\|sys\)\.\)\@<=[A-Za-z_][A-Za-z0-9_]*"
 
     ]])
-  end,
+    end,
 })
