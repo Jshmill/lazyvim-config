@@ -45,12 +45,12 @@ vim.keymap.set("n", "<S-Enter>", "O<Esc>", { desc = "New Line Above"})
 
 -- vim.keymap.set("n", "<leader>P", "<Cmd>!sqlfluff fix %<CR><Cmd>retab<CR>", {desc = "Format TSQL using sqlfluff"})
 vim.keymap.set("n", "<leader>P", function()
-  vim.cmd("write")
-  vim.cmd("!sqlfluff fix %")
-  vim.cmd("edit!")
-  vim.cmd("retab")
+    vim.cmd("write")
+    vim.cmd("!sqlfluff fix %")
+    vim.cmd("edit!")
+    vim.cmd("retab")
 end, {
-  desc = "Format TSQL using sqlfluff",
+    desc = "Format TSQL using sqlfluff",
 })
 
 -- For normal mode search
@@ -64,9 +64,9 @@ vim.keymap.set('c', "'<,'>s/", "'<,'>s/\\v", { silent = false })
 
 -- Add keymaps to increase or decrease the size of the current window
 vim.keymap.set("n", "<leader>wl", "<cmd>vertical resize +10<CR>", {
-  desc = "Increase window width",
+    desc = "Increase window width",
 })
 
 vim.keymap.set("n", "<leader>wh", "<cmd>vertical resize -10<CR>", {
-  desc = "Increase window width",
+    desc = "Increase window width",
 })
