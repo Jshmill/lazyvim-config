@@ -35,6 +35,7 @@ vim.api.nvim_create_autocmd("Syntax", {
         syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT PRINT COUNT containedin=ALLBUT,Comment,String
         syntax keyword @number NULL containedin=ALLBUT,Comment,String
         syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String
+        syntax keyword Conditional INNER OUTER LEFT RIGHT JOIN containedin=ALLBUT,Comment,String
         syntax match Constant "[()\[\]{}]" containedin=ALLBUT,Comment,String
         syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 

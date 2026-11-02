@@ -10,7 +10,7 @@ require("catppuccin").setup({
             Number = {fg = colors.flamingo},
             Conditional = {fg = colors.pink},
             PreProc = {fg = colors.flamingo},
-            ["@variable"] = {italic = true}
+            ["@variable"] = {italic = true, fg = colors.subtext0}
         }
     end,
 })
