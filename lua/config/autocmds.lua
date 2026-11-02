@@ -30,12 +30,13 @@ vim.api.nvim_create_autocmd("Syntax", {
         syntax keyword @tag TOP DEFAULT PRIMARY KEY containedin=ALLBUT,Comment,String
         syntax keyword @keyword.conditional GO BEGIN END ON OFF containedin=ALLBUT,Comment,String
         syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
-        syntax keyword @keyword.conditional IF IIF ELSE THEN EXISTS RETURN CASE WHEN containedin=ALLBUT,Comment,String
+        syntax keyword @keyword.conditional IF IIF ELSE THEN EXISTS CASE WHEN containedin=ALLBUT,Comment,String
         syntax keyword @variable.parameter RAISERROR EXEC EXECUTE TRIGGER PROCEDURE TABLE VIEW FUNCTION CLOSE DEALLOCATE containedin=ALLBUT,Comment,String
         syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT PRINT COUNT containedin=ALLBUT,Comment,String
+        syntax keyword Float RETURN containedin=ALLBUT,Comment,String
         syntax keyword @number NULL containedin=ALLBUT,Comment,String
         syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String
-        syntax keyword Conditional INNER OUTER LEFT RIGHT JOIN containedin=ALLBUT,Comment,String
+        syntax keyword @keyword.conditional INNER OUTER LEFT RIGHT JOIN containedin=ALLBUT,Comment,String
         syntax match Constant "[()\[\]{}]" containedin=ALLBUT,Comment,String
         syntax match @property "#[A-Za-z_][A-Za-z0-9_]*" containedin=ALLBUT,Comment,String
 

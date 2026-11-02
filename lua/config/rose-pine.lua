@@ -1,6 +1,4 @@
 require("rose-pine").setup({
-    variant = "auto", -- auto, main, moon, or dawn
-    dark_variant = "main", -- main, moon, or dawn
     dim_inactive_windows = true,
     extend_background_behind_borders = true,
 
@@ -58,10 +56,15 @@ require("rose-pine").setup({
 	-- NOTE: Highlight groups are extended (merged) by default. Disable this
 	-- per group via `inherit = false`
     highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- StatusLine = { fg = "love", bg = "love", blend = 15 },
-        -- VertSplit = { fg = "muted", bg = "muted" },
-        -- Visual = { fg = "base", bg = "text", inherit = false },
+        ['@keyword.conditional'] = { fg = "foam" },
+        ['@variable.parameter'] = { fg = "rose"},
+        Float = { fg = "iris"},
+        Operator = {fg = "iris"},
+        Constant = { fg = "pine" },
+        VertSplit = { fg = "muted", bg = "muted" },
+        Visual = { fg = "base", bg = "text", inherit = false },
+        ['@tag'] = { fg = "pine" },
+        ['@property'] = { fg = "foam" }
     },
 
     before_highlight = function(group, highlight, palette)
