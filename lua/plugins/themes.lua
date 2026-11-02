@@ -5,7 +5,11 @@ return {
         end,
     },
 
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim", name = "rose-pine",
+        config = function()
+            require("config.rose-pine")
+        end,
+    },
 
     { "shaunsingh/nord.nvim", name = "nord",
         config = function()
