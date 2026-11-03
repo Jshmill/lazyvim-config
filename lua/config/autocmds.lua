@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("Syntax", {
         syntax keyword @label INSERTED UPDATED DELETED containedin=ALLBUT,Comment,String
         syntax keyword @keyword.conditional GO BEGIN END ON OFF IF IIF ELSE THEN EXISTS CASE WHEN containedin=ALLBUT,Comment,String
         syntax keyword @variable.parameter RAISERROR EXEC EXECUTE TRIGGER PROCEDURE TABLE VIEW FUNCTION CLOSE DEALLOCATE containedin=ALLBUT,Comment,String
-        syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT PRINT COUNT containedin=ALLBUT,Comment,String
+        syntax keyword @function TRANSACTION INTO IDENTITY_INSERT NEXT OUTPUT PRINT COUNT HOST_NAME containedin=ALLBUT,Comment,String
         syntax keyword Float RETURN containedin=ALLBUT,Comment,String
         syntax keyword @number NULL containedin=ALLBUT,Comment,String
         syntax keyword TYPE SYSNAME containedin=ALLBUT,Comment,String

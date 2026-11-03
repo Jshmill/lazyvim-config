@@ -37,6 +37,7 @@ require("ember").setup({
             ['@property'] = { fg = theme.syn.sage},
             ['@tag'] = { fg = theme.syn.orange },
             ['@label'] = { fg = theme.syn.orange },
+            ['@variable'] = { italic = true },
         }
         for group, hl in pairs(overrides) do
             highlights[group] = vim.tbl_extend("force", highlights[group] or {}, hl)
