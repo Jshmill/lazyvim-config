@@ -4,29 +4,43 @@
 -- Values: hex string, or a palette accent name (coral orange gold olive sage steel rose mauve).
 -- Leave a category out to keep ember's default.
 local categories = {
-    keyword = "coral",
+    statement = "orange",
+    sqlstatement = "orange",
     func    = "sage",
     string  = "olive",
     type    = "gold",
     comment = "#706c61",
     operator = "steel",
-    ['@variable.parameter'] = "rose",
+    conditional = "steel",
 }
 
 require("ember").setup({
-    variant = "ember", -- "ember" | "ember-soft" | "ember-light" | "ember-lighter"
+    variant = "ember",
     on_highlights = function(highlights, theme)
-        if next(categories) == nil then return end
         local syn = vim.deepcopy(theme.syn)
         for cat, color in pairs(categories) do
-            syn[cat] = theme.syn[color] or color -- accent name -> hex
+            if cat ~= "@variable.parameter" then
+                syn[cat] = theme.syn[color] or color
+            end
         end
-        -- Rebuild groups from the modified categories.
+
         local rebuilt = require("ember.highlights").get(vim.tbl_extend("force", theme, { syn = syn }))
         for group, hl in pairs(rebuilt) do
             highlights[group] = hl
         end
+
+        -- Capture groups aren't ember categories, so set these directly.
+        local overrides = {
+            ["@variable.parameter"] = { fg = theme.syn.rose },
+            Keyword = { fg = theme.syn.orange },
+            ['@keyword.conditional'] = { bold = false },
+        }
+        for group, hl in pairs(overrides) do
+            highlights[group] = vim.tbl_extend("force", highlights[group] or {}, hl)
+        end
     end,
 })
+
+vim.cmd("colorscheme ember")
 
 vim.cmd("colorscheme ember")
