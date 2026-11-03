@@ -22,10 +22,7 @@ return {
         name = "ember",
         priority = 1000,
         config = function()
-            require("ember").setup({
-            variant = "ember", -- "ember" | "ember-soft" | "ember-light" | "ember-lighter"
-            })
-            vim.cmd("colorscheme ember")
+            require("config.embers")
         end,
     },
 
