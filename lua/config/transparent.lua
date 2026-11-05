@@ -33,13 +33,12 @@ local function make_transparent()
         })
     end
 
-    local Statement = vim.api.nvim_get_hl(0, { name = "Statement" })
-
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatTitle", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "FloatFooter", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = Statement.fg, bg = "NONE", bold = true, italic = true })
+    local cur = vim.api.nvim_get_hl(0, { name = "CursorLineNr", link = false })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = cur.fg, bg = "NONE", bold = true, italic = true })
     vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "LineNr", { fg = 0xd3d3d3, bg = "NONE" })
     vim.api.nvim_set_hl(0, "LineNrAbove", { fg = 0xd3d3d3 })

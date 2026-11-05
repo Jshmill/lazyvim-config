@@ -60,6 +60,7 @@ require("rose-pine").setup({
         ['@variable.parameter'] = { fg = "rose"},
         Float = { fg = "iris"},
         Operator = {fg = "iris"},
+        CursorLineNr = { fg = "iris" },
         Constant = { fg = "pine" },
         VertSplit = { fg = "muted", bg = "muted" },
         Visual = { fg = "base", bg = "text", inherit = false },
