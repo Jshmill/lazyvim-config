@@ -16,6 +16,8 @@ return {
             TEST = { icon = "⏲ ", color = "test", alt = { "TESTING" } },
             PASS = { icon = "⏲ ", color = "success", alt = { "PASSED" } },
             FAIL = { icon = "⏲ ", color = "error", alt = { "FAILED" } },
+            IMPORTANT = { icon = "󱈸 ", color = "error", alt = { "FAILED" } },
+
         },
         colors = {
             error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
