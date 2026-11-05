@@ -18,6 +18,20 @@ vim.keymap.set("n", "<leader>yp", function()
     )
 end, { desc = "Copy relative file path" })
 
+-- keymap to copy current file name minus the type:
+vim.keymap.set("n", "<leader>yn", function()
+    local filename = vim.fn.expand("%:t:r")
+
+    vim.fn.setreg("+", filename)
+
+    Snacks.notify(
+        "󰆏 " .. filename,
+        {
+            title = "Copied"
+        }
+    )
+end, { desc = "Copy file name without extension" })
+
 vim.keymap.set("n", "<leader>yl", function()
     local result = string.format(
         "%s:%d",
