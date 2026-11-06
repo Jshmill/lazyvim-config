@@ -23,7 +23,9 @@ local function make_transparent()
         "TroubleNormal",
         "SnacksTerminalBorder",
         "SnacksTerminalNormal",
-        "MiniPickNormal"
+        "MiniPickNormal",
+        "StatusLineTerm",
+        "StatusLineTermNC",
     }
 
     for _, group in ipairs(groups) do
