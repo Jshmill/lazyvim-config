@@ -65,7 +65,8 @@ require("rose-pine").setup({
         VertSplit = { fg = "muted", bg = "muted" },
         Visual = { fg = "base", bg = "text", inherit = false },
         ['@tag'] = { fg = "pine" },
-        ['@property'] = { fg = "iris" }
+        ['@property'] = { fg = "iris" },
+        ['@label'] = { fg = "rose" }
     },
 
     before_highlight = function(group, highlight, palette)
